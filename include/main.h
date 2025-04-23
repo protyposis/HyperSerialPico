@@ -76,6 +76,10 @@ void processData()
 			yield();
 		}
 
+		// For debugging connection from CLI: Respond to every `a` (warning: this likely breaks normal operation)
+		if (input == 0x61)
+			printf(HELLO_MESSAGE);
+
 		switch (frameState.getState())
 		{
 		case AwaProtocol::HEADER_A:
